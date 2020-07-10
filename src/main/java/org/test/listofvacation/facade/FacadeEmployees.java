@@ -8,7 +8,7 @@ import org.test.listofvacation.service.EmployeeService;
 import java.util.List;
 
 @Service
-public class FacadeEmployeesService {
+public class FacadeEmployees {
 
     @Autowired
     EmployeeService employeeService;
