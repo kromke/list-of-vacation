@@ -1,0 +1,15 @@
+spring:
+ application:
+  name: list-of-vacation
+
+server:
+  port: 8080
+
+logging:
+  config: file:./config/logback-spring.xml
+
+database:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/employees
+  username: postgres
+  password: 1789
