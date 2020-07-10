@@ -1,4 +1,4 @@
-insert into employees (id, first_name, last_name, fathers_name, position, date_of_birth, date_of_employment, login, password)
+insert into employees (id, last_name, first_name, fathers_name, position, date_of_birth, date_of_employment, login, password)
 values
 (1, 'Сластникова', 'Рената', 'Афанасиевна', 'Администратор базы данных', '28-08-1982', '21-12-2013', 'user1', 'password'),
 (2, 'Васин', 'Изяслав', 'Филиппович', 'Администратор базы данных', '22-12-1972', '9-1-2010', 'user2', 'password'),

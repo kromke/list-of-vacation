@@ -21,7 +21,7 @@ public class AppController {
     public String getEmployeesList() {
         List<Employee> list = facadeEmployeesService.getEmployeeList();
         ObjectMapper objectMapper = new ObjectMapper();
-
-        return objectMapper.writeValueAsString(list);
+        return "<h1>Contact</h1>" +
+                "<p>" + objectMapper.writeValueAsString(list) + "</p>";
     }
 }
