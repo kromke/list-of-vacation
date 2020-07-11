@@ -2,6 +2,7 @@ package org.test.listofvacation.entities;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode
 @Entity
 @Table(name = "employees")
 public class Employee {

@@ -1,27 +1,33 @@
 package org.test.listofvacation.service;
 
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.test.listofvacation.dto.EmployeeDataProvider;
 import org.test.listofvacation.entities.Employee;
+import org.test.listofvacation.entities.Vacation;
 import org.test.listofvacation.repository.EmployeeRepoSpringData;
-import org.test.listofvacation.repository.VacationRepoSpringData;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-@Data
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     EmployeeRepoSpringData employeeRepoSpringData;
 
     @Autowired
-    VacationRepoSpringData vacationRepoSpringData;
+    VacationService vacationService;
 
     @Override
-    public List<Employee> getEmployees() {
-        return employeeRepoSpringData.findAll();
+    public List<EmployeeDataProvider> getEmployees() {
+        List<Employee> employees = employeeRepoSpringData.findAll();
+        Map<Employee, List<Vacation>> vacations = vacationService.getMappedVacations();
+        return employees.stream().map(o -> new EmployeeDataProvider().setVacations(vacations.get(o)))
+                .collect(Collectors.toList());
     }
+
 
 }
