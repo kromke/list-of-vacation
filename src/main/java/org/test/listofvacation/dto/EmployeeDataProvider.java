@@ -12,10 +12,6 @@ import org.test.listofvacation.entities.Vacation;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-        "employees"
-})
 @Data
 @NoArgsConstructor
 public class EmployeeDataProvider extends Employee {

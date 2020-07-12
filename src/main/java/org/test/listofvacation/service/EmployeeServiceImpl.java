@@ -22,7 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     VacationService vacationService;
 
     @Override
-    public List<EmployeeDataProvider> getEmployees() {
+    public List<EmployeeDataProvider> getEmployeesWithVacations() {
         List<Employee> employees = employeeRepoSpringData.findAll();
         Map<Employee, List<Vacation>> vacations = vacationService.getMappedVacations();
         return employees.stream().map(o -> new EmployeeDataProvider().setVacations(vacations.get(o)))

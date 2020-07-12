@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.test</groupId>
 	<artifactId>list-of-vacation</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+
 	<name>list-of-vacation</name>
 	<description>Test project for Spring Boot</description>
 
@@ -65,19 +65,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<classifier>spring-boot</classifier>
-							<mainClass>
-								org.baeldung.executable.ExecutableMavenJar
-							</mainClass>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 

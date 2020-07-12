@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    List<EmployeeDataProvider> getEmployees();
+    List<EmployeeDataProvider> getEmployeesWithVacations();
 
 }
