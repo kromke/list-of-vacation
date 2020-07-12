@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("./config/application.yml")
+@PropertySource("file:./config/application.yml")
 public class DatabaseConfig {
 
     @Bean
