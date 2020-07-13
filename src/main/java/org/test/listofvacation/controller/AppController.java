@@ -22,8 +22,8 @@ public class AppController {
 
     @SneakyThrows
     @GetMapping("/employees")
-    public String getEmployeesList() {
-        return objectMapper.writeValueAsString(facadeEmployees.getEmployeeVacationList());
+    public String getEmployees() {
+        return objectMapper.writeValueAsString(facadeEmployees.getEmployees());
     }
 
     @SneakyThrows

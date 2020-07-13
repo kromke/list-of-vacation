@@ -3,6 +3,7 @@ package org.test.listofvacation.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.listofvacation.dto.EmployeeDataProvider;
+import org.test.listofvacation.entities.Employee;
 import org.test.listofvacation.entities.Vacation;
 import org.test.listofvacation.service.EmployeeService;
 import org.test.listofvacation.service.VacationService;
@@ -17,6 +18,10 @@ public class FacadeEmployees {
 
     @Autowired
     VacationService vacationService;
+
+    public List<Employee> getEmployees() {
+        return employeeService.getEmployees();
+    }
 
     public List<EmployeeDataProvider> getEmployeeVacationList(){
         return employeeService.getEmployeesWithVacations();

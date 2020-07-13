@@ -29,5 +29,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .collect(Collectors.toList());
     }
 
+    public List<Employee> getEmployees () {
+        return employeeRepoSpringData.findAll();
+    }
 
 }
