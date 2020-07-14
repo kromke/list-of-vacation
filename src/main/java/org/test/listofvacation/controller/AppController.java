@@ -1,15 +1,12 @@
 package org.test.listofvacation.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.xml.bind.v2.runtime.output.SAXOutput;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.test.listofvacation.dto.EmployeeDataProvider;
+import org.springframework.web.bind.annotation.*;
+import org.test.listofvacation.entities.Employee;
 import org.test.listofvacation.facade.FacadeEmployees;
-
-import java.util.List;
 
 @RestController("/employees")
 public class AppController {
@@ -20,18 +17,40 @@ public class AppController {
     @Autowired
     ObjectMapper objectMapper;
 
+    @CrossOrigin
     @SneakyThrows
     @GetMapping("/employees")
     public String getEmployees() {
         return objectMapper.writeValueAsString(facadeEmployees.getEmployees());
     }
 
+    @CrossOrigin
     @SneakyThrows
     @GetMapping("/vacations")
     public String getVacations() {
         return objectMapper.writeValueAsString(facadeEmployees.getVacationsList());
     }
 
-//    @PostMapping
-//    public
+    @CrossOrigin
+    @SneakyThrows
+    @GetMapping("/employees-vacations")
+    public String getEmployeesVacations() {
+        return objectMapper.writeValueAsString(facadeEmployees.getEmployeeVacationList());
+    }
+
+    @CrossOrigin
+    @SneakyThrows
+    @PostMapping("/employees/add")
+    public String addEmployee(@RequestBody String employee) {
+        return objectMapper.
+                writeValueAsString(facadeEmployees.
+                        addEmployee(objectMapper.readValue(employee, Employee.class)));
+    }
+
+    @CrossOrigin
+    @PostMapping("/employees/user")
+    public String lookup(@RequestBody String employee) {
+        System.out.println(employee);
+        return null;
+    }
 }

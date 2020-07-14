@@ -3,6 +3,7 @@ package org.test.listofvacation.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.listofvacation.dto.EmployeeDataProvider;
+import org.test.listofvacation.dto.VacationDataProvider;
 import org.test.listofvacation.entities.Employee;
 import org.test.listofvacation.entities.Vacation;
 import org.test.listofvacation.service.EmployeeService;
@@ -23,11 +24,15 @@ public class FacadeEmployees {
         return employeeService.getEmployees();
     }
 
-    public List<EmployeeDataProvider> getEmployeeVacationList(){
+    public List<EmployeeDataProvider> getEmployeeVacationList() {
         return employeeService.getEmployeesWithVacations();
     }
 
-    public List<Vacation> getVacationsList() {
-        return vacationService.getVacations();
+    public List<VacationDataProvider> getVacationsList() {
+        return vacationService.getVacationsSimplify();
+    }
+
+    public String addEmployee(Employee employee) {
+        return employeeService.addEmployee(employee);
     }
 }

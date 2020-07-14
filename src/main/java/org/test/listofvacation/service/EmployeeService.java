@@ -11,4 +11,6 @@ public interface EmployeeService {
 
     List<Employee> getEmployees();
 
+
+    String addEmployee(Employee employee);
 }

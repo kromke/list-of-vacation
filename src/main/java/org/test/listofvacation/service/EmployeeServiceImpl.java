@@ -7,7 +7,6 @@ import org.test.listofvacation.entities.Employee;
 import org.test.listofvacation.entities.Vacation;
 import org.test.listofvacation.repository.EmployeeRepoSpringData;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,6 +30,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public List<Employee> getEmployees () {
         return employeeRepoSpringData.findAll();
+    }
+
+    public String addEmployee (Employee employee) {
+        Employee e = employeeRepoSpringData.save(employee);
+        return "ok";
     }
 
 }
