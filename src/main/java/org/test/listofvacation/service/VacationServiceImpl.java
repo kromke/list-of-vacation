@@ -19,7 +19,7 @@ public class VacationServiceImpl implements VacationService {
     @Override
     public List<VacationDataProvider> getVacationsSimplify() {
         List<Vacation> list = vacationRepoSpringData.findAll();
-        return list.stream().map(o -> new VacationDataProvider(o.getId(), o.getEmployee().getLastName(),
+        return list.stream().map(o -> new VacationDataProvider(o.getEmployee().getId(), o.getEmployee().getLastName(),
                 o.getEmployee().getFirstName(), o.getEmployee().getFathersName(),
                 o.getEmployee().getPosition(), o.getStartDate(), o.getEndDate()))
                 .collect(Collectors.toList());

@@ -1,15 +1,14 @@
 package org.test.listofvacation.entities;
 
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
@@ -45,5 +44,19 @@ public class Employee {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", fathersName='" + fathersName + '\'' +
+                ", dateOfBirth=" + dateOfBirth.getTime() +
+                ", position='" + position + '\'' +
+                ", dateOfEmployment=" + dateOfEmployment.getTime() +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 
 }
