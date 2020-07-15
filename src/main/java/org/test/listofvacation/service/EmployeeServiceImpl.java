@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<EmployeeDataProvider> getEmployeesWithVacations() {
         List<Employee> employees = employeeRepoSpringData.findAll();
         Map<Employee, List<Vacation>> vacations = vacationService.getMappedVacations();
-        return employees.stream().map(o -> new EmployeeDataProvider().setVacations(vacations.get(o)))
+        return employees.stream().map(o -> new EmployeeDataProvider(o,vacations.get(o)))
                 .collect(Collectors.toList());
     }
 

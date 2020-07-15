@@ -21,7 +21,7 @@ public class AppController {
     @SneakyThrows
     @GetMapping("/employees")
     public String getEmployees() {
-        return objectMapper.writeValueAsString(facadeEmployees.getEmployees());
+        return objectMapper.writeValueAsString(facadeEmployees.getEmployeeVacationList());
     }
 
     @CrossOrigin
@@ -47,10 +47,4 @@ public class AppController {
                         addEmployee(objectMapper.readValue(employee, Employee.class)));
     }
 
-    @CrossOrigin
-    @PostMapping("/employees/user")
-    public String lookup(@RequestBody String employee) {
-        System.out.println(employee);
-        return null;
-    }
 }

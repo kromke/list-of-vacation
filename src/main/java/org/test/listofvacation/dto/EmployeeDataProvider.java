@@ -1,6 +1,7 @@
 package org.test.listofvacation.dto;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.test.listofvacation.entities.Employee;
@@ -10,13 +11,10 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class EmployeeDataProvider extends Employee {
+@AllArgsConstructor
+public class EmployeeDataProvider {
 
+    private Employee employee;
     private List<Vacation> vacations;
-
-    public EmployeeDataProvider setVacations(List<Vacation> vacations) {
-        this.vacations = vacations;
-        return this;
-    }
 
 }
