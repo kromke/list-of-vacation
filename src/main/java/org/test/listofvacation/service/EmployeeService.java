@@ -1,5 +1,6 @@
 package org.test.listofvacation.service;
 
+import org.test.listofvacation.dto.Authorisation;
 import org.test.listofvacation.dto.EmployeeDataProvider;
 import org.test.listofvacation.entities.Employee;
 
@@ -13,4 +14,6 @@ public interface EmployeeService {
 
 
     String addEmployee(Employee employee);
+
+    Employee getEmployeeWithLoginPassword(Authorisation auth);
 }

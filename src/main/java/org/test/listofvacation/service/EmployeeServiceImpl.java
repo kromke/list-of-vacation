@@ -2,6 +2,8 @@ package org.test.listofvacation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.test.listofvacation.dto.Authorisation;
 import org.test.listofvacation.dto.EmployeeDataProvider;
 import org.test.listofvacation.entities.Employee;
 import org.test.listofvacation.entities.Vacation;
@@ -32,9 +34,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepoSpringData.findAll();
     }
 
+    @Transactional
     public String addEmployee (Employee employee) {
-        Employee e = employeeRepoSpringData.save(employee);
+        System.out.println("service start");
+        employee = employeeRepoSpringData.save(employee);
+        System.out.println(employee);
+        System.out.println("service end");
         return "ok";
     }
 
+    public Employee getEmployeeWithLoginPassword(Authorisation auth) {
+        Employee employee = employeeRepoSpringData
+                .findByLoginAndPassword(auth.getLogin(), auth.getPassword());
+        return employee;
+    }
 }

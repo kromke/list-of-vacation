@@ -5,10 +5,11 @@ import com.sun.xml.bind.v2.runtime.output.SAXOutput;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.test.listofvacation.dto.Authorisation;
 import org.test.listofvacation.entities.Employee;
 import org.test.listofvacation.facade.FacadeEmployees;
 
-@RestController("/employees")
+@RestController
 public class AppController {
 
     @Autowired
@@ -42,9 +43,16 @@ public class AppController {
     @SneakyThrows
     @PostMapping("/employees/add")
     public String addEmployee(@RequestBody String employee) {
-        return objectMapper.
-                writeValueAsString(facadeEmployees.
-                        addEmployee(objectMapper.readValue(employee, Employee.class)));
+                return facadeEmployees.
+                        addEmployee(objectMapper.readValue(employee, Employee.class));
+    }
+
+    @CrossOrigin
+    @SneakyThrows
+    @PostMapping("/authorisation")
+    public String getAuthorisation(@RequestBody String loginPassword) {
+        return objectMapper.writeValueAsString(facadeEmployees
+                .getAuthorisation(objectMapper.readValue(loginPassword, Authorisation.class)));
     }
 
 }
