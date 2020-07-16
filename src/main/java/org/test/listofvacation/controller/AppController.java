@@ -43,8 +43,8 @@ public class AppController {
     @SneakyThrows
     @PostMapping("/employees/add")
     public String addEmployee(@RequestBody String employee) {
-                return facadeEmployees.
-                        addEmployee(objectMapper.readValue(employee, Employee.class));
+        return facadeEmployees.
+                addEmployee(objectMapper.readValue(employee, Employee.class));
     }
 
     @CrossOrigin
