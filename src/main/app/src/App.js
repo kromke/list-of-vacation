@@ -1,10 +1,11 @@
 import React from 'react';
+import Authorisation from './content/authorisation';
 
 function App() {
   return (
-    <div className="wrapper">
-      App
-    </div>
+    <fieldset className="wrapper">
+      <Authorisation />
+    </fieldset>
   );
 }
 
