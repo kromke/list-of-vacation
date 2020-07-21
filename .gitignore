@@ -30,11 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 /logs/
-.gitignore
-README.md
-package-lock.json
-package.json
-public/
+
 
 
 # dependencies
