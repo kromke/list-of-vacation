@@ -22,3 +22,11 @@ code {
   background-color: #dfdbdb;
 }
 
+.authorisation {
+  width: min-content;
+}
+
+.submit {
+  margin-left: 150px;
+ 
+}
