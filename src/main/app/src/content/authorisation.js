@@ -11,7 +11,7 @@ export default function Authorisation() {
                         </small>
                 </legend>
                 <input type = 'text' placeholder = 'login'/>
-                <input type = 'password' placeholder = 'password' /> <button className = 'submit'>check</button>
+                <input type = 'password' placeholder = 'password' /> <button>check</button>
                 </fieldset>
         );
     

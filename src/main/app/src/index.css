@@ -24,9 +24,7 @@ code {
 
 .authorisation {
   width: min-content;
+  clear: both;
+  text-align: right;
 }
 
-.submit {
-  margin-left: 150px;
- 
-}
